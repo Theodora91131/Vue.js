@@ -1,4 +1,10 @@
 app.component('product-display',{
+    props:{
+        premium:{
+            type: Boolean,
+            required: true
+        }
+    },
     template:
     /*html*/
    ` <div class="product-display">
@@ -12,6 +18,7 @@ app.component('product-display',{
             <p v-if="inventory > 10">In Stock</p>
             <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
             <p v-else>Out of Stock</p>
+            <p>Shipping:{{shipping}}</p>
             <ul>
               <li v-for="detail in details">{{detail}}</li>
             </ul>
@@ -70,7 +77,13 @@ app.component('product-display',{
         inStock(){
 
             return this.variants[this.selectedVariant].quantity
-        }
-
+        },
+        shipping(){
+            if(this.premium){
+                return 'Free'
+            }
+                return 2.99
+            }   
+        
     }
 })
