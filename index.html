@@ -28,9 +28,9 @@
             </ul>
           
             <div 
-              v-for="variant in variants" 
+              v-for="(variant,index) in variants" 
               :key="variant.id"
-               @mouseover="updateImage(variant.image)"
+               @mouseover="updateVariant(index)"
                class="color-circle"
                :style="{backgroundColor: variant.color}">
                
