@@ -19,7 +19,7 @@
             <img v-bind:src="image">
           </div>
           <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ brand + ' ' + product }}</h1>
             <p v-if="inventory > 10">In Stock</p>
             <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
             <p v-else>Out of Stock</p>
@@ -38,7 +38,7 @@
             <!--button class="button" v-on:click="cart += 1">Add to  Cart</button-->
             <button 
               class="button"
-              :class="{ disabledButton: !inStock }"
+              :class="{ disabledButton: !inStock}"
               :disabled="!inStock"
               v-on:click="addToCart">
               Add to  Cart
