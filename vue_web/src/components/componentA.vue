@@ -23,7 +23,7 @@ const changeView=(index)=>{
 <input type = "text" v-model="text"/> 
 <p>{{ text }}</p>
 </div>
-<div v-else> black screen </div>
+<div v-if="view !==1 && view !==2"> black screen </div>
 </template>
 
 <style >
