@@ -1,10 +1,14 @@
 <script setup>
-const num = 0.6
+const num = "0.5"
+const numFormat=()=>{
+  if(Number.isNaN(num*100)) return num
+  return `${num*100}%`
+  }
 </script>
 
 <template>
   <h1>Computed計算屬性</h1>
-  <h3>{{Number.isNaN(num*100)? num : num*100 }}%</h3>
+  <h3>{{numFormat()}}</h3>
 
 </template>
 
