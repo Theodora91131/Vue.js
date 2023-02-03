@@ -7,10 +7,13 @@ const dataList = {
   key3:'c',
   key4:'d'
 }
+setTimeout(()=>{
+  test.value = 'apple!'
+},2000)
 </script>
 
 <template>
-  <p class="test-cls">{{ test }}</p>
+  <p class="test-cls" :key="test">{{ test }}</p>
   <p v-for="(value,key,index) in dataList"
   :key="value">
     <span class="hint" v-show="key !=='key3'">
