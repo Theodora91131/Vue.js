@@ -6,7 +6,13 @@
 </template>
 <script setup>
 import { computed } from '@vue/reactivity'
-defineProps(['data'])
+//defineProps(['data']) method1
+defineProps({
+    data:{
+        type:String,
+        default:'',
+    },
+})
 //const msgCount = computed(()=>{
 //    return XXX.length
 //})
