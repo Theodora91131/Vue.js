@@ -6,6 +6,8 @@
 </template>
 <script setup>
 import { computed } from '@vue/reactivity'
+import { watch } from 'vue'
+const emit = defineEmits(['update'])
 //defineProps(['data']) method1
 const props = defineProps({
     data:{
@@ -15,6 +17,10 @@ const props = defineProps({
 })
 const msgCount = computed(()=>{
    return props.data.length
+})
+watch(msgCount,(newValue)=>{
+    emit('update',newValue)
+
 })
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <input type=" text" v-model="msg"/>
   <br/>
-  <Child v-bind:data="msg"/>
+  <Child v-bind:data="msg" v-on:update="updateHandler"/>
 </template>
 
 
@@ -9,6 +9,9 @@
 import {ref} from 'vue'
 import Child from './components/Child.vue'
 const msg = ref('')
+const updateHandler =(data)=>{
+  console.log(data)
+}
 </script>
 
 
