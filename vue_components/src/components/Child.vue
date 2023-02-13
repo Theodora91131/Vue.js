@@ -1,21 +1,21 @@
 <template>
-    <!--div>
-      字數:{{msgCount}}
-    </div-->
+    <div>
+      字數:{{ msgCount }}
+    </div>
    data: {{ data }}
 </template>
 <script setup>
 import { computed } from '@vue/reactivity'
 //defineProps(['data']) method1
-defineProps({
+const props = defineProps({
     data:{
         type:String,
         default:'',
     },
 })
-//const msgCount = computed(()=>{
-//    return XXX.length
-//})
+const msgCount = computed(()=>{
+   return props.data.length
+})
 </script>
 
 
